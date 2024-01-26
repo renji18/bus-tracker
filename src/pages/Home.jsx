@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react";
-import data from "../data";
-import { useNavigate } from "react-router-dom";
-import AlertsBtn from "../components/AlertsBtn";
+import { useEffect, useState } from "react"
+import data from "../data"
+import { useNavigate } from "react-router-dom"
+import AlertsBtn from "../components/AlertsBtn"
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [stopValue, setStopValue] = useState("");
-  const [stopOptions, setStopOptions] = useState([]);
+  const navigate = useNavigate()
+  const [stopValue, setStopValue] = useState("")
+  const [stopOptions, setStopOptions] = useState([])
 
   const handleDropdownChange = (event) => {
-    setStopValue(event.target.value);
-  };
+    setStopValue(event.target.value)
+  }
 
   const createStops = () => {
     if (data) {
       const stops = data.reduce((accumulator, ops) => {
-        return [...accumulator, ...ops.stops];
-      }, []);
+        return [...accumulator, ...ops.stops]
+      }, [])
 
-      setStopOptions(stops);
+      setStopOptions(stops)
     }
-  };
+  }
 
   useEffect(() => {
-    createStops();
-  }, []);
+    createStops()
+  }, [])
 
   return (
     <div className="select-wrapper flex items-center h-[50vh] justify-center ">
@@ -62,12 +62,12 @@ const Home = () => {
       </div>
       <button
         className="hover:bg-[#1db954] rounded-md bg-white hover:text-white text-[#1db954] border-2 border-[#1db954] transition-all duration-500 ease-in-out px-5 py-3 text-2xl font-bold absolute top-5 left-5"
-        onClick={() => navigate("/admin")}
+        onClick={() => navigate("/profile")}
       >
-        Admin Page
+        Your Profile
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
