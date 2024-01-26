@@ -6,7 +6,7 @@ const Admin = () => {
   return (
     <>
       <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/profile")}
         className="absolute top-5 left-5 bg-[#1DB954] text-3xl px-4 py-1 rounded flex justify-center content-center"
       >
         &larr;
@@ -17,7 +17,7 @@ const Admin = () => {
       <div className="flex justify-center gap-10">
         <button
           onClick={() => {
-            navigate("/admin/edit-routes");
+            navigate("edit-routes");
           }}
           className="bg-[#50C878] text-white font-semibold text-lg py-5 px-16 rounded"
         >
@@ -25,7 +25,7 @@ const Admin = () => {
         </button>
         <button
           onClick={() => {
-            navigate("/admin/create-alert");
+            navigate("create-alert");
           }}
           className="bg-[#50C878] text-white font-semibold text-lg py-5 px-16 rounded"
         >

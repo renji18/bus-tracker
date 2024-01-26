@@ -17,7 +17,7 @@ const EditRoutes = () => {
   return (
     <div className="bg-slate-100">
       <button
-        onClick={() => navigate("/admin")}
+        onClick={() => navigate("/profile/admin")}
         className="absolute top-5 left-5 bg-emerald-300 text-3xl px-4 py-1 rounded"
       >
         &larr;
