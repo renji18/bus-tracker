@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Details = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [userDetails, setUserDetails] = useState({
     name: "Aadarsh Jha",
@@ -22,48 +22,55 @@ const Details = () => {
         location: "Atladara, Narayanwadi",
       },
     },
-  })
+  });
 
   return (
-    <div>
-      <div className="flex gap-2">
-        <p>Name:</p>
-        <p>{userDetails["name"]}</p>
+    <div
+      class="backdrop-blur"
+      className=" shadow-2xl bg-black bg-opacity-55     text-white   relative h-[450px]	right-[-45%] w-[50%] flex flex-col justify-center space-x-8  space-y-2  "
+    >
+      <div className="flex gap-2 px-[30px]">
+        <p className="font-bold text-4xl ">Name:</p>
+        <p className="font-medium text-4xl">{userDetails["name"]}</p>
       </div>
       <div className="flex gap-2">
-        <p>Contact Number:</p>
-        <p>{userDetails["contact"]}</p>
+        <p className="font-bold text-4xl	  ">Contact Number:</p>
+        <p className="font-medium text-4xl	">{userDetails["contact"]}</p>
       </div>
       <div className="flex gap-2">
-        <p>Email:</p>
-        <p>{userDetails["email"]}</p>
+        <p className="font-bold text-4xl">Email:</p>
+        <p className="font-medium text-4xl	">{userDetails["email"]}</p>
       </div>
       <div className="flex gap-2">
-        <p>Enrollment Number:</p>
-        <p>{userDetails["enrollment"]}</p>
+        <p className="font-bold text-4xl">Enrollment Number:</p>
+        <p className="font-medium	text-4xl">{userDetails["enrollment"]}</p>
       </div>
       <div className="flex gap-2">
-        <p>Department:</p>
-        <p>{userDetails["department"]}</p>
+        <p className="font-bold text-4xl">Department:</p>
+        <p className="font-medium text-4xl	">{userDetails["department"]}</p>
       </div>
       <div className="flex gap-2">
-        <p>Institute:</p>
-        <p>{userDetails["institute"]}</p>
+        <p className="font-bold text-4xl">Institute:</p>
+        <p className="font-medium	text-4xl">{userDetails["institute"]}</p>
       </div>
       <div className="flex gap-2">
-        <p>Bus Enrolled:</p>
-        <p>{userDetails["busEnrolled"] ? "Yes" : "No"}</p>
+        <p className="font-bold text-4xl">Bus Enrolled:</p>
+        <p className="font-medium text-4xl	">
+          {userDetails["busEnrolled"] ? "Yes" : "No"}
+        </p>
       </div>
       {userDetails["busEnrolled"] && (
-        <div className="flex gap-2">
-          <p>Validity Left:</p>
-          <p>{userDetails["busData"]["validityLeft"]}</p>
+        <div className="flex gap-2 ">
+          <p className="font-bold text-4xl">Validity Left:</p>
+          <p className="font-medium text-4xl	">
+            {userDetails["busData"]["validityLeft"]}
+          </p>
         </div>
       )}
       {userDetails["busEnrolled"] ? (
-        <div>
+        <div className="flex justify-center my-[15px]">
           <button
-            className="border"
+            className="bg-neutral-800	 rounded-md w-60 text-3xl  "
             onClick={() => navigate("bus-pass", { state: userDetails })}
           >
             View Bus Pass
@@ -73,16 +80,14 @@ const Details = () => {
         <div>
           <button
             className="border"
-            onClick={() =>
-              navigate("bus-pass-payment")
-            }
+            onClick={() => navigate("bus-pass-payment")}
           >
             Enroll To Bus Services
           </button>
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;
