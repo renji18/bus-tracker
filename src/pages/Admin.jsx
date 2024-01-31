@@ -14,7 +14,7 @@ const Admin = () => {
       <div className="title flex  justify-center text-black font-bold text-4xl  py-[50px]">
         Admin Page
       </div>
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center gap-10  ">
         <button
           onClick={() => {
             navigate("edit-routes");
