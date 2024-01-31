@@ -1,117 +1,119 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const BusPass = () => {
-  const location = useLocation();
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  const [userData, setUserData] = useState(location?.state);
+  const [userData, setUserData] = useState(location?.state)
 
-  console.log(userData);
 
   return (
-    <div className="flex space-x-6 justify-center   py-[150px]	">
-      <div className="bg-white shadow-2xl h-[350px] w-[550px] rounded-lg  ">
-        <div className=" bg-green-900		 h-[100px] 	">
-          <div className="w-[100%] h-[50%] flex ">
-            <span
-              className=" px-[2%] font-extrabold text-3xl text-slate-50
-		"
-            >
+    <div className="flex justify-center gap-8  py-[150px]	">
+    <div className=" h-20 ">
+        <button
+          onClick={() => navigate("/profile/user")}
+          className="absolute top-5 left-5 bg-[#1DB954] text-3xl px-4 py-1 rounded flex justify-center content-center "
+        >
+          &larr;
+        </button>
+      </div>
+      <div className="bg-white shadow-2xl h-[350px] w-[550px] rounded-lg relative ">
+        <div className=" bg-green-900 h-[100px] 	">
+          <div className="w-[100%] h-[50%] flex justify-between p-3">
+            <span className=" font-extrabold text-3xl text-slate-50">
               NAAC A++
             </span>
-            <span className="px-[11%] font-extrabold text-3xl text-slate-50">
+            <span className="font-extrabold text-3xl text-slate-50">
               Parul University
             </span>
           </div>
+          <span className="mx-[28%] p-2 text-slate-200 ">
+            Bus Pass No. {userData?.busData?.busPassNo}
+          </span>
+        </div>
+        <div className="relative p-3">
+          <img
+            src={userData?.image}
+            alt=""
+            className="h-[100px] w-[100px] -mt-14"
+          />
+          <p className="font-bold text-xl absolute left-[200px] top-5">
+            {userData?.name}
+          </p>
 
-          <span className=" m-[28%] text-slate-200 "> Bus N0.:5623</span>
-        </div>
-        <div className="absolute top-[29%] left-[16%]">
-          <img src="" alt="" className="h-[130px] w-[130px] bg-black " />
-        </div>
-        <div className="absolute top-[50%] left-[18%]">
-          <img src="" alt="" className="h-[70px] w-[70px] bg-green-900 " />
-        </div>
-        <div className="px-[30%] pt-[5px] font-semibold">
-          <span className="">JHA AADARSH AJITKUMAR</span>
-        </div>
-        <div className=" px-[30%] py-[10px] font-semibold  ">
-          {/* <br />
-          <span className="">Card ID: 5654(63665)</span>
-          <br />
-          <span>Dept: BE-CSe</span>
-          <br />
-          <span>Inst.: PIT</span>
-          <br />
-          <span>Shift Time: 09:30-17:00</span>
-          <br />
-          <span>Cont. no.: 456235985</span> */}
-          <div className="space-y-1">
-            <p className="font-semibold sm:items-center flex flex-col sm:flex-row text-sm text-opacity-60 text-black px-2">
-              <span className="text-sm mr-3 text-black">Card ID:</span>{" "}
-              <span>5654(63665)</span>
-            </p>
-            <p className="font-semibold sm:items-center flex flex-col sm:flex-row text-sm text-opacity-60 text-black px-2">
-              <span className="text-sm mr-3 text-black">Dept:</span>{" "}
-              <span>BE-CSe</span>
-            </p>
-            <p className="font-semibold sm:items-center flex flex-col sm:flex-row text-sm text-opacity-60 text-black px-2">
-              <span className="text-sm mr-3 text-black font-medium">
-                Inst.:
-              </span>{" "}
-              <span>PIT</span>
-            </p>
-            <p className="font-semibold sm:items-center flex flex-col sm:flex-row text-sm text-opacity-60 text-black px-2">
-              <span className="text-sm mr-3 text-black">Shift Time:</span>{" "}
-              <span> 09:30-17:00</span>
-            </p>
-            <p className="font-semibold sm:items-center flex flex-col sm:flex-row text-sm text-opacity-60 text-black px-2">
-              <span className="text-sm mr-3 text-black">Cont. no.</span>{" "}
-              <span>456235985</span>
-            </p>
-            <p className="font-semibold sm:items-center flex flex-col sm:flex-row text-sm text-opacity-60 text-black px-2">
-              <span className="text-sm mr-3 text-black">Student Number:</span>{" "}
-              <span>45623</span>
-            </p>
+          <div className="grid grid-cols-[auto,auto,1fr] gap-x-5 max-w-fit px-5 py-8 gap-y-2 w-2/3">
+            <p className="max-w-fit font-semibold">Card ID</p>
+            <p className="max-w-fit">:</p>
+            <p className="max-w-fit">{userData?.busData?.cardId}</p>
+
+            <p className="max-w-fit font-semibold">Dept</p>
+            <p className="max-w-fit">:</p>
+            <p className="max-w-fit">{userData?.department}</p>
+
+            <p className="max-w-fit font-semibold">Inst.</p>
+            <p className="max-w-fit">:</p>
+            <p className="max-w-fit">{userData?.institute}</p>
+
+            <p className="max-w-fit font-semibold">Shift Time</p>
+            <p className="max-w-fit">:</p>
+            <p className="max-w-fit">{userData?.busData?.shiftTime}</p>
           </div>
         </div>
-        <div className="absolute top-[35%] left-[43%]">
-          <img src="" alt="" className="h-[100px] w-[100px] bg-black " />
+        <div className="absolute bottom-11 right-10">
+          <div className="relative h-[100px] w-full">
+            <img
+              src="https://media.istockphoto.com/id/828088276/vector/qr-code-illustration.jpg?s=612x612&w=0&k=20&c=FnA7agr57XpFi081ZT5sEmxhLytMBlK4vzdQxt8A70M="
+              alt=""
+              className="h-[100px] w-[100px] absolute top-0 right-0"
+            />
+          </div>
+          <p className="text-sm text-rose-600">
+            AREA-{userData?.busData?.area?.number} (
+            {userData?.busData?.area?.location})
+          </p>
+            <p className="text-sm mt-3">Cont. No. : {userData?.contact}</p>
         </div>
       </div>
-      <div className="bg-white shadow-xl h-[350px] w-[500px] rounded-lg space-x-2 space-y-2 ">
-        <span className="flex justify-center text-sm	font-bold	">IMPORTANT</span>
+      <div className="bg-white p-5 shadow-2xl flex flex-col gap-3 text-xs h-[350px] w-[500px] rounded-lg ">
+        <span className="flex justify-center	font-bold	">IMPORTANT</span>
 
-        <span className="flex justify-center text-base		 ">
-          The pass holder must display this pass whilw travling in the
-          university bys.
+        <span className="">
+          The pass holder must display this pass (No photo copy/soft copy of the
+          pass/fee reciept) while travelling in the University's bus failing
+          which the driver may not allow you into the bus. Moreover, travelling
+          without valid bus pass may result into the penalty decided by the
+          management of the University.
         </span>
 
-        <span className="flex justify-center text-center text-base		">
-          the bus pass is valid only for the route for which it is issued.A
-          prior written permission from pu transport deparment.
+        <span className="">
+          The bus pass is valid only for the route for which it is issued. A
+          prior written permission from PU Transport Deparment is required if it
+          is used for the bus route other that it is issued for..
         </span>
 
-        <span className="flex justify-center text-center text-base		">
+        <span className="">
           A dublicate pass will be issued in case the original bus pass is lost.
+          (Rs. 300/- for the first time and Rs. 1000/- or more as per prevailing
+          norms thereafter.)
         </span>
 
-        <span className="flex justify-center text-center text-base		">
+        <span className="">
           Seats of first three rows are reserved for the staff members.
         </span>
 
-        <span className="flex justify-center text-center text-base		">
-          the bus pass is valid only for the specific time period as mentioned
-          on it.
+        <span className="">
+          The bus pass is valid only for the specific time period as mentioned
+          on it and the same may be renewed before the expiry.
         </span>
 
-        <span className="flex justify-center text-center text-base		">
-          Any indecipline behaviour/section may redult into cancellation of the
+        <span className="">
+          Any indecipline behaviour/section may result into cancellation of the
           bus pass permanently.
         </span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BusPass;
+export default BusPass
