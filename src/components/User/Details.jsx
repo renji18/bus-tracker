@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Details = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [userDetails, setUserDetails] = useState({
     name: "Aadarsh Jha",
     image: "https://cdn-icons-png.flaticon.com/512/219/219970.png",
-    contact: 7600081901,
+    contact: 76000815656,
     email: "210305105278@paruluniversity.ac.in",
     enrollment: 210305105278,
     department: "BE-CSE",
@@ -23,14 +23,14 @@ const Details = () => {
         location: "Atladara, Narayanwadi",
       },
     },
-  })
+  });
 
   const ItemRenderer = ({ name, value }) => (
     <div className="flex gap-2 items-center">
       <p className="font-[600] text-3xl">{name}:</p>
       <p className="font-[400] ml-2 text-2xl">{value}</p>
     </div>
-  )
+  );
 
   return (
     <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/80">
@@ -87,7 +87,7 @@ const Details = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;
