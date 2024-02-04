@@ -28,7 +28,7 @@ const BusPass = () => {
   });
 
   return (
-    <div className="flex justify-center gap-8  py-[150px]	">
+    <div className="flex justify-center h-[100vh] gap-8  py-[150px] bg-zinc-300	">
       <div className=" h-20 ">
         <button
           onClick={() => navigate("/profile")}
@@ -94,7 +94,7 @@ const BusPass = () => {
           <p className="text-sm mt-3">Cont. No. : {userData?.contact}</p>
         </div>
       </div>
-      <div className="bg-white p-5 shadow-2xl flex flex-col gap-3 text-xs h-[350px] w-[500px] rounded-lg ">
+      <div className="bg-white p-5 shadow-2xl flex flex-col gap-3 text-xs h-[350px] w-[550px] rounded-lg ">
         <span className="flex justify-center	font-bold	">IMPORTANT</span>
 
         <span className="">

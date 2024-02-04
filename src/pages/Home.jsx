@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
 import AlertsBtn from "../components/AlertsBtn";
+import hoome from "../assets/hoome.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -27,8 +28,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="select-wrapper flex items-center h-[50vh] justify-center ">
-      <div className="absolute top-5 right-5">
+    <div className="select-wrapper flex items-center h-[50vh]  justify-center bg-cover bg-no-repeat  ">
+      <div className="absolute top-5 right-5 ">
         <AlertsBtn />
       </div>
       <div className=" bg-white flex gap-4 items-center flex-col ">

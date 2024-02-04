@@ -1,0 +1,4 @@
+.slanted {
+  transform: skew(-20deg);
+  margin-left: -20px; /* Adjust as needed */
+}

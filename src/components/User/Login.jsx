@@ -8,11 +8,6 @@ const Login = ({ setIsLoggedIn }) => {
   const [loginData, setLoginData] = useState({ id: "", pass: "" });
 
   const navigate = useNavigate();
-  // const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  // function handlePopupClick() {
-  //   setIsPopupOpen(!isPopupOpen);
-  // }
 
   const handleDataChange = (key, value) => {
     setLoginData((prev) => ({ ...prev, [key]: value }));
@@ -24,10 +19,10 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className=" backdrop-blur-sm h-[400px] w-[470px] absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 ">
+    <div className=" backdrop-blur-sm h-[400px] w-[470px] shadow-2xl shadow-[#0284c7]		 absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 z-20 ">
       <input
         value={loginData?.id}
-        className="px-2 py-2 bg-gray-100 w-[350px] text-black rounded-md focus:outline-none border-2 border-black "
+        className="px-2 py-2 backdrop-opacity-20 w-[350px] text-black rounded-md focus:outline-none border-2 border-[#1d4ed8] transition ease-in-out delay-150 hover:-translate-1 hover:scale-110  duration-300 "
         type="text"
         onChange={(e) => handleDataChange("id", e.target.value)}
         placeholder="Enter your id"
@@ -35,12 +30,12 @@ const Login = ({ setIsLoggedIn }) => {
       <input
         value={loginData?.pass}
         onChange={(e) => handleDataChange("pass", e.target.value)}
-        className="px-2 py-2 bg-gray-100 w-[350px] text-black rounded-md focus:outline-none border-2 border-black"
+        className="px-2 py-2 backdrop-opacity-20 w-[350px] text-black rounded-md focus:outline-none border-2 border-[#1d4ed8] transition ease-in-out delay-150 hover:-translate-1 hover:scale-110  duration-300"
         type="password"
         placeholder="Enter your password"
       />
       <button
-        className="rounded-md  bg-slate-500 w-20 h-8 border-black"
+        className="rounded-md  text-white bg-[#4f46e5] w-20 h-8 border-black transition ease-in-out delay-150 hover:-translate-1 hover:scale-110 hover:bg-[#1d4ed8] duration-300	"
         onClick={
           ({ handleLogin },
           () => {
@@ -51,13 +46,6 @@ const Login = ({ setIsLoggedIn }) => {
       >
         Login
       </button>
-      {/* <div className="bg-slate-500">
-        {isPopupOpen && (
-          <div>
-            <button onClick={handlePopupClick}>X</button>
-          </div>
-        )}
-      </div> */}
     </div>
   );
 };
