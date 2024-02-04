@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react"
-import data from "../data"
-import { useNavigate } from "react-router-dom"
-import AlertsBtn from "../components/AlertsBtn"
+import { useEffect, useState } from "react";
+import data from "../data";
+import { useNavigate } from "react-router-dom";
+import AlertsBtn from "../components/AlertsBtn";
 
 const Home = () => {
-  const navigate = useNavigate()
-  const [stopValue, setStopValue] = useState("")
-  const [stopOptions, setStopOptions] = useState([])
+  const navigate = useNavigate();
+  const [stopValue, setStopValue] = useState("");
+  const [stopOptions, setStopOptions] = useState([]);
 
   const handleDropdownChange = (event) => {
-    setStopValue(event.target.value)
-  }
+    setStopValue(event.target.value);
+  };
 
   const createStops = () => {
     if (data) {
       const stops = data.reduce((accumulator, ops) => {
-        return [...accumulator, ...ops.stops]
-      }, [])
+        return [...accumulator, ...ops.stops];
+      }, []);
 
-      setStopOptions(stops)
+      setStopOptions(stops);
     }
-  }
+  };
 
   useEffect(() => {
-    createStops()
-  }, [])
+    createStops();
+  }, []);
 
   return (
     <div className="select-wrapper flex items-center h-[50vh] justify-center ">
@@ -44,8 +44,9 @@ const Home = () => {
               className="bg-white font-[500] cursor-pointer px-20 w-full rounded-l-lg  text-[#1DB954] flex  border-none  outline-none"
             >
               <option value="">Select Here</option>
+
               {stopOptions?.map((stops) => (
-                <option key={stops} className="cursor-pointer" value={stops}>
+                <option key={stops} className="cursor-pointer " value={stops}>
                   {stops}
                 </option>
               ))}
@@ -67,7 +68,7 @@ const Home = () => {
         Your Profile
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

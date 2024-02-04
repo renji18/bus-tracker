@@ -24,7 +24,7 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className=" backdrop-blur-lg h-[400px] w-[470px] absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 ">
+    <div className=" backdrop-blur-sm h-[400px] w-[470px] absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 ">
       <input
         value={loginData?.id}
         className="px-2 py-2 bg-gray-100 w-[350px] text-black rounded-md focus:outline-none border-2 border-black "
