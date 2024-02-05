@@ -15,7 +15,7 @@ const Details = ({ stopValue }) => {
 
   return (
     <>
-      <div className="text-2xl grid grid-cols-[auto,1fr] gap-x-7 gap-y-2 tracking-wide shadow-lg p-10 rounded-lg shadow-[#1DB954]">
+      <div className="text-2xl grid grid-cols-[auto,1fr] w-[700px] gap-x-7 gap-y-2 tracking-wide shadow-lg p-10 rounded-lg shadow-[#1DB954]">
         <p>Driver Name:</p>
         <p className="font-semibold">{stopDetails?.name}</p>
         <p>Contact Number:</p>

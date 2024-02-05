@@ -3,6 +3,7 @@ import data from "../data";
 import { useNavigate } from "react-router-dom";
 import AlertsBtn from "../components/AlertsBtn";
 import hoome from "../assets/hoome.jpg";
+import Loader from "../loading/Loader";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Home = () => {
     createStops();
   }, []);
 
-  return (
+  return stopOptions !== null ? (
     <div className="select-wrapper flex items-center h-[50vh]  justify-center bg-cover bg-no-repeat  ">
       <div className="absolute top-5 right-5 ">
         <AlertsBtn />
@@ -42,7 +43,7 @@ const Home = () => {
             <select
               value={stopValue}
               onChange={handleDropdownChange}
-              className="bg-white font-[500] cursor-pointer px-20 w-full rounded-l-lg  text-[#1DB954] flex  border-none  outline-none"
+              className="bg-white font-[500]  cursor-pointer px-20 w-full rounded-l-lg  text-[#1DB954] flex  border-none  outline-none"
             >
               <option value="">Select Here</option>
 
@@ -69,6 +70,8 @@ const Home = () => {
         Your Profile
       </button>
     </div>
+  ) : (
+    <Loader />
   );
 };
 

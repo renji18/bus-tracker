@@ -19,7 +19,7 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className=" backdrop-blur-sm h-[400px] w-[470px] shadow-2xl shadow-[#0284c7]		 absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 z-20 ">
+    <div className=" backdrop-blur-sm h-[500px] w-[470px] shadow-lg shadow-[#7dd3fc]		 absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 z-20  ">
       <input
         value={loginData?.id}
         className="px-2 py-2 backdrop-opacity-20 w-[350px] text-black rounded-md focus:outline-none border-2 border-[#1d4ed8] transition ease-in-out delay-150 hover:-translate-1 hover:scale-110  duration-300 "
