@@ -13,7 +13,7 @@ const BusDetails = () => {
       <div className="flex px-5 pt-5 justify-between">
         <button
           onClick={() => navigate("/")}
-          className="bg-[#1DB954] text-3xl px-5 rounded flex justify-center content-center	"
+          className="bg-[#1DB954] text-3xl px-5 rounded grid place-items-center	"
         >
           &larr;
         </button>
