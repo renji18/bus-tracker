@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
 import AlertsBtn from "../components/AlertsBtn";
-import hoome from "../assets/hoome.jpg";
 import Loader from "../loading/Loader";
 
 const Home = () => {
