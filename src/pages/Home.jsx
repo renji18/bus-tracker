@@ -1,38 +1,39 @@
-import { useEffect, useState } from "react"
-import data from "../data"
-import { useNavigate } from "react-router-dom"
-import AlertsBtn from "../components/AlertsBtn"
+import { useEffect, useState } from "react";
+import data from "../data";
+import { useNavigate } from "react-router-dom";
+import AlertsBtn from "../components/AlertsBtn";
+import Loader from "../loading/Loader";
 
 const Home = () => {
-  const navigate = useNavigate()
-  const [stopValue, setStopValue] = useState("")
-  const [stopOptions, setStopOptions] = useState([])
+  const navigate = useNavigate();
+  const [stopValue, setStopValue] = useState("");
+  const [stopOptions, setStopOptions] = useState([]);
 
   const handleDropdownChange = (event) => {
-    setStopValue(event.target.value)
-  }
+    setStopValue(event.target.value);
+  };
 
   const createStops = () => {
     if (data) {
       const stops = data.reduce((accumulator, ops) => {
-        return [...accumulator, ...ops.stops]
-      }, [])
+        return [...accumulator, ...ops.stops];
+      }, []);
 
-      setStopOptions(stops)
+      setStopOptions(stops);
     }
-  }
+  };
 
   useEffect(() => {
-    createStops()
-  }, [])
+    createStops();
+  }, []);
 
-  return (
-    <div className="select-wrapper flex items-center h-[50vh] justify-center ">
-      <div className="absolute top-5 right-5">
+  return stopOptions !== null ? (
+    <div className="select-wrapper h-screen bg-zinc-400/50 flex items-center   justify-center bg-cover bg-no-repeat  ">
+      <div className="absolute top-5 right-5 ">
         <AlertsBtn />
       </div>
-      <div className=" bg-white flex gap-4 items-center flex-col ">
-        <p className="bg-white text-black flex justify-center p-6 text-5xl font-bold ">
+      <div className="h-1/2 flex gap-4 items-center flex-col ">
+        <p className=" text-black flex justify-center p-6 text-5xl font-bold ">
           Choose your stop
         </p>
 
@@ -41,11 +42,12 @@ const Home = () => {
             <select
               value={stopValue}
               onChange={handleDropdownChange}
-              className="bg-white font-[500] cursor-pointer px-20 w-full rounded-l-lg  text-[#1DB954] flex  border-none  outline-none"
+              className="bg-white font-[500]  cursor-pointer px-20 w-full rounded-l-lg  text-[#1DB954] flex  border-none  outline-none"
             >
               <option value="">Select Here</option>
+
               {stopOptions?.map((stops) => (
-                <option key={stops} className="cursor-pointer" value={stops}>
+                <option key={stops} className="cursor-pointer " value={stops}>
                   {stops}
                 </option>
               ))}
@@ -67,7 +69,9 @@ const Home = () => {
         Your Profile
       </button>
     </div>
-  )
-}
+  ) : (
+    <Loader />
+  );
+};
 
-export default Home
+export default Home;

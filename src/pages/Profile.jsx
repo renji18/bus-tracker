@@ -1,43 +1,70 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import Login from "../components/User/Login"
+import abc from "../assets/abc.jpg"
 
 const Profile = () => {
   const navigate = useNavigate()
+  const [showLogin, setShowLogin] = useState(false)
+
+  function loginpage() {
+    setShowLogin(!showLogin)
+  }
+
   return (
-    <div className="bg-cyan-600		h-full">
+    <div className="bg-zinc-300">
       <div
-        className="  h-full w-full bg-cover 	
-        bg-no-repeat 	 "
+        className="h-screen w-full bg-cover bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1607424064879-708250e57647?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+          backgroundImage: `url(${abc})`,
         }}
       >
-        <div className=" h-20 ">
-          <button
-            onClick={() => navigate("/")}
-            className="absolute top-5 left-5 bg-[#1DB954] text-3xl px-4 py-1 rounded flex justify-center content-center "
-          >
-            &larr;
-          </button>
-        </div>
-
-        <div className="p-10 h-[500px] absolute right-40 flex flex-col justify-center gap-10">
-          <div className="">
+        <div className="bg-black/40 h-screen">
+          <div className="h-20 ">
             <button
-              className="hover:bg-[#1db954] w-[310px] rounded-md bg-white hover:text-white text-[#1db954] border-2 border-[#1db954] transition-all duration-500 ease-in-out px-5 py-3 text-4xl font-bold "
-              onClick={() => navigate("admin")}
+              onClick={() => navigate("/")}
+              className=" absolute top-5 left-5 backdrop-opacity-20 shadow-lg shadow-[#93c5fd] hover:text-white text-4xl text-[#1e40af] border-sky-300	 px-4 py-1 rounded flex justify-center content-center transition ease-in-out hover:-translate-1 hover:shadow-none hover:scale-110 hover:bg-[#1d4ed8]/65 font-bold bg-gray-300 duration-300 "
             >
-              Admin Login
+              &larr;
             </button>
           </div>
-          <div className="">
-            <button
-              className="hover:bg-[#1db954] w-[310px] rounded-md bg-white hover:text-white text-[#1db954] border-2 border-[#1db954] transition-all duration-500 ease-in-out px-5 py-3 text-4xl font-bold"
-              onClick={() => navigate("user")}
-            >
-              User Login
-            </button>
+
+          <div className="p-10 h-[500px] absolute right-40 flex flex-col justify-center gap-10">
+            <div className={`${showLogin ? "hidden" : "block"}`}>
+              <button
+                className=" w-[310px] rounded-md backdrop-opacity-20 bg-white hover:text-white text-[#1e40af] border-2 border-[#1d4ed8] px-5 py-3 text-4xl font-bold transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#1d4ed8] duration-300 "
+                onClick={() => {
+                  navigate("admin")
+                  loginpage()
+                }}
+              >
+                Admin Login
+              </button>
+            </div>
+
+            <div className={`${showLogin ? "hidden" : "block"}`}>
+              <button
+                className=" w-[310px] rounded-md backdrop-opacity-20 bg-white hover:text-white text-[#1e40af] border-2 border-[#1d4ed8]  px-5 py-3 text-4xl font-bold transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#1d4ed8] duration-300 "
+                onClick={() => loginpage()}
+              >
+                User Login
+              </button>
+            </div>
+          </div>
+
+          {showLogin && <Login />}
+          <div className=" h-10 w-10 absolute right-[95px] top-[5.3rem] z-20 transition ease-in-out delay-150 hover:-translate-1 hover:scale-110  duration-300	">
+            {showLogin && (
+              <div className="flex justify-end p-2">
+                <button
+                  onClick={loginpage}
+                  className="text-white text-4xl  hover:text-gray-300 font-medium	  		"
+                >
+                  x
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
