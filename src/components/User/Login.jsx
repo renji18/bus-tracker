@@ -19,7 +19,7 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className=" backdrop-blur-sm h-[500px] w-[470px] shadow-lg shadow-[#7dd3fc]		 absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 z-20  ">
+    <div className="  h-[500px] w-[470px] shadow-lg shadow-[#7dd3fc]	bg-white/40	 absolute top-[100px] right-[100px] flex flex-col justify-center items-center gap-8 z-20  ">
       <input
         value={loginData?.id}
         className="px-2 py-2 backdrop-opacity-20 w-[350px] text-black rounded-md focus:outline-none border-2 border-[#1d4ed8] transition ease-in-out delay-150 hover:-translate-1 hover:scale-110  duration-300 "
@@ -35,7 +35,7 @@ const Login = ({ setIsLoggedIn }) => {
         placeholder="Enter your password"
       />
       <button
-        className="rounded-md  text-white bg-[#4f46e5] w-20 h-8 border-black transition ease-in-out delay-150 hover:-translate-1 hover:scale-110 hover:bg-[#1d4ed8] duration-300	"
+        className="rounded-lg font-bold text-2xl text-white bg-[#4f46e5] px-5 py-2 border-black transition ease-in-out delay-150 hover:-translate-1 hover:scale-110 hover:bg-[#1d4ed8] duration-300	"
         onClick={
           ({ handleLogin },
           () => {

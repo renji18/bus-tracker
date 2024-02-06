@@ -9,7 +9,7 @@ const BusDetails = () => {
   const value = location.state.stopValue;
 
   return (
-    <>
+    <div className="bg-zinc-300 ">
       <div className="flex px-5 pt-5 justify-between">
         <button
           onClick={() => navigate("/")}
@@ -29,7 +29,7 @@ const BusDetails = () => {
         <GMap />
         <Details stopValue={value} />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -44,7 +44,7 @@ const BusPass = () => {
               NAAC A++
             </span>
             <span className="font-extrabold text-3xl text-slate-50">
-              Parul University
+              Karasuno High
             </span>
           </div>
           <span className="mx-[28%] p-2 text-slate-200 ">

@@ -29,12 +29,12 @@ const Home = () => {
   }, []);
 
   return stopOptions !== null ? (
-    <div className="select-wrapper flex items-center h-[50vh]  justify-center bg-cover bg-no-repeat  ">
+    <div className="select-wrapper h-screen bg-zinc-400/50 flex items-center   justify-center bg-cover bg-no-repeat  ">
       <div className="absolute top-5 right-5 ">
         <AlertsBtn />
       </div>
-      <div className=" bg-white flex gap-4 items-center flex-col ">
-        <p className="bg-white text-black flex justify-center p-6 text-5xl font-bold ">
+      <div className="h-1/2 flex gap-4 items-center flex-col ">
+        <p className=" text-black flex justify-center p-6 text-5xl font-bold ">
           Choose your stop
         </p>
 
