@@ -45,8 +45,8 @@ const UpdateAlert = ({ setAlertType }) => {
   }
 
   return (
-    <div className="absolute flex top-0 left-0 right-0 bottom-0 p-20 bg-gray-400/90">
-      <div className="bg-black/70 relative flex-1 p-10 space-y-5 text-white rounded-md">
+    <div className="absolute flex items-center justify-center top-0 left-0 right-0 bottom-0 p-20 bg-gray-400/90">
+      <div className="bg-black/70  max-w-[50vw] w-full lg:max-w-[50vw] relative p-10 space-y-5 text-white rounded-md">
         <button
           onClick={() => setAlertType(null)}
           className="absolute top-5 left-5 bg-emerald-300 text-3xl px-4 py-1 rounded  	 "
@@ -91,13 +91,13 @@ const UpdateAlert = ({ setAlertType }) => {
             <div className="flex justify-evenly mt-7">
               <button
                 onClick={() => setAlertType(null)}
-                className="bg-rose-400 text-white font-semibold text-lg py-5 px-16 rounded"
+                className="bg-rose-400 text-white font-semibold text-lg lg:py-5 lg:px-16 rounded px-5 py-4"
               >
                 Cancel
               </button>
               <button
                 onClick={saveTimingsAlert}
-                className="bg-emerald-400 text-white font-semibold text-lg py-5 px-16 rounded"
+                className="bg-emerald-400 text-white font-semibold text-lg lg:py-5 lg:px-16 rounded px-5 py-4"
               >
                 Create Alert
               </button>
