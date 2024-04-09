@@ -28,7 +28,7 @@ const BusPass = () => {
   });
 
   return (
-    <div className="flex justify-center h-[100vh] gap-8  py-[150px] bg-zinc-300	">
+    <div className="flex flex-col lg:flex-row items-center justify-center h-[100vh] gap-8  py-[150px] bg-zinc-300	">
       <div className=" h-20 ">
         <button
           onClick={() => navigate("/profile")}
